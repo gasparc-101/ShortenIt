@@ -1,7 +1,7 @@
 # ShortIt
 ## introduction.
  
-**ShortIt** is a webapp that allows user to reduce long links to shorter ones. It takes an input from the user, once the user send the link, it returns a shortened functional link.
+**ShortIt** is a webapp that allows the user to reduce long links to shorter ones. It takes an input from the user, once the user send the link, it returns a shortened functional link.
 
 ## Features
 1. *Basic Link Shornening* - Input a long url and receive a shorter version.

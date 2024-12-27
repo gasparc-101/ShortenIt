@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: aqua;
+}
+
+header {
+    padding: 1% 2% 1% 2%;
+}
+
+.logo {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 1.9rem;
+}
+header > nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > nav > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+header > nav > ul li {
+    list-style-type: none;
+    list-style: none;
+}
+
+header > nav > ul li a {
+    text-decoration: none;
+    font-size: 1.7rem;
+}
+
+#home{
+    height: 100vh;
+    margin: 1% 2% 1% 2%;;
+}
+
+#home > h2 {
+    position: relative;
+    top: 28%;
+    text-align: center;
+}
+.main {
+    position: relative;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+}
+
+.main > #form {
+    display: grid;
+    background-color: white;
+    width: 60%;
+    align-items: center;
+    height: 3rem;
+    border-radius: 10px;
+}
+
+.main > #form > .data-processing {
+    place-self: center;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+}
+
+.main > #form > .data-processing input {
+    width: 90%;
+    height: 1.7rem;
+    padding: 3px 4px 3px 5px;
+    border: none;
+    font-size: medium;
+    outline: none;
+    
+}
+
+.main > #form > .data-processing i {
+    font-size: large;
+}
+
+.main > #form > .data-processing button {
+    background-color: white;
+    box-shadow: none;
+    border: none;
+}
+
+.main > #form > .data-processing .send {
+    cursor: pointer;
+}

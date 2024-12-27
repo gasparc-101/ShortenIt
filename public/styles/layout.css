@@ -44,13 +44,13 @@ header > nav > ul li a {
 }
 
 #home{
-    height: 100vh;
-    margin: 1% 2% 1% 2%;;
+    margin: 1% 2% 1% 2%;
+    height: 80vh;
 }
 
 #home > h2 {
     position: relative;
-    top: 28%;
+    top: 27%;
     text-align: center;
 }
 .main {
@@ -65,7 +65,7 @@ header > nav > ul li a {
 .main > #form {
     display: grid;
     background-color: white;
-    width: 60%;
+    width: 50%;
     align-items: center;
     height: 3rem;
     border-radius: 10px;

@@ -71,14 +71,17 @@ header > nav > ul li a {
     border-radius: 10px;
 }
 
-.main > #form > .data-processing {
-    place-self: center;
 
+.main > #form .data-processing {
+    place-self: center;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: fit-content;
+    margin-top: 8px;
 }
+
 
 .main > #form > .data-processing input {
     width: 90%;
@@ -90,16 +93,34 @@ header > nav > ul li a {
     
 }
 
-.main > #form > .data-processing i {
+i {
     font-size: large;
+    font-weight: 800;
 }
 
-.main > #form > .data-processing button {
-    background-color: white;
+.main > #form > .data-processing button, .main > #form > .data-response button  {
+    background-color: transparent;
     box-shadow: none;
     border: none;
 }
 
-.main > #form > .data-processing .send {
+.send {
     cursor: pointer;
+}
+
+.main > #form > .data-response {
+    margin-top: 30px; 
+    background-color: white; 
+    border-radius: 10px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 2.9rem; 
+    padding-left: 20px; 
+    padding-right: 20px;
+}
+
+.main > #form > .data-response p {
+    color: #948989;
+    width: 95%;
 }

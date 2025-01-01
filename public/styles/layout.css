@@ -4,11 +4,15 @@
 }
 
 body {
-    background-color: aqua;
+    background-color: #CDF5FD ;
+    color: #00A9FF
 }
 
 header {
-    padding: 1% 2% 1% 2%;
+    padding: .7%;
+    color: #89CFF3;
+    box-shadow: 0px 4px 6px rgba(0, 169, 255, 0.2);
+    height: fit-content;
 }
 
 .logo {
@@ -22,6 +26,7 @@ header > nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 header > nav > ul {
@@ -139,7 +144,37 @@ i {
     width: 95%;
 }
 
+nav ul {
+    left: 0;
+}
+
 @media (max-width: 578px){
+
+    header {
+        padding: 2.5%;
+        padding-left: 0;
+    }
+
+    header > nav .logo, header > nav i{
+        font-size: 1.2rem;
+        margin-left: 2%;
+    }
+    header > nav > ul {
+        display: flex;
+        left: -100vw;
+        flex-direction: column;
+        position: fixed;
+        align-items: center;
+        justify-content: space-around;
+        top: 5.7%;
+        width: 100vw;
+        height: 100vh;
+        background-color: red;
+        z-index: 1000;
+        transition: 1s;
+        gap: 0;
+
+    }
     h1 {
         font-size: 1.75rem; /* 28px */
       }
@@ -147,7 +182,7 @@ i {
         font-size: 1.5rem; /* 24px */
       }
 
-      .main {
+    .main {
         position: relative;
         top: 30%;
         display: flex;

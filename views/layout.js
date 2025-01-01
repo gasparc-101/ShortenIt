@@ -1,3 +1,6 @@
-const dataResponse = document.querySelector('.data-response');
-dataResponse.classList.add('hiddene'); // Hides the element
+let menuIcon = document.querySelector('.fa-bars')
+
+menuIcon.addEventListener("click", ()=>{
+       menuIcon.classList.toggle('fa-times')
+})
 

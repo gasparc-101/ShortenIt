@@ -1,3 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#ham-menu{
+    display: none;
+}
+
+html, body {
+    overflow-x: hidden; /* Remove rolagem horizontal */
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +19,10 @@
 
 body {
     background-color: #CDF5FD ;
-    color: #00A9FF
+    color: #00A9FF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -49,14 +66,13 @@ header > nav > ul li a {
 }
 
 #home{
-    margin: 1% 2% 1% 2%;
-    height: 80vh;
+    margin-top: 10%;
+    flex:1;
 }
 
 #home > h2 {
-    position: relative;
-    top: 27%;
     text-align: center;
+    margin-bottom: 25px;
 }
 .main {
     position: relative;
@@ -84,7 +100,7 @@ header > nav > ul li a {
     justify-content: center;
     align-items: center;
     height: fit-content;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 
@@ -144,15 +160,44 @@ i {
     width: 95%;
 }
 
-nav ul {
-    left: 0;
+footer{
+    width: 100%; /* Garante que ocupe toda a largura */
+    height: 6vh; /* Altura fixa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+footer .social-icons{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(32, 53, 63, 0.2);
+    margin: 0;
+    border-radius: 10px;
+}
+
+.social-icons i {
+    font-size: 1.9rem;
+}
+
+.social-icons i:hover{
+    scale: 1.2;
+    transition: .4s;
+}
+
+
 @media (max-width: 578px){
+
+
 
     header {
         padding: 2.5%;
         padding-left: 0;
+        height: 6vh;
     }
 
     header > nav .logo, header > nav i{
@@ -169,12 +214,22 @@ nav ul {
         top: 5.7%;
         width: 100vw;
         height: 100vh;
-        background-color: red;
         z-index: 1000;
         transition: 1s;
         gap: 0;
+        background-color: #89CFF3;
 
     }
+
+    #home{
+        margin-top: 55%;
+    }
+
+    .active{
+        left: 0;
+        transition: 1s;
+    }
+    
     h1 {
         font-size: 1.75rem; /* 28px */
       }
@@ -204,6 +259,20 @@ nav ul {
     .main > #form > .data-response p {
         width: 80%;
         font-size: .8rem;
+    }
+
+    footer {
+        height: 7vh; /* Adapta o tamanho */
+        padding: 10px;
+
+    }
+
+    footer .social-icons {
+        width: 37%;
+    }
+
+    footer .social-icons i{
+        font-size: 1.3rem;
     }
 }
 

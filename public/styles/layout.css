@@ -11,10 +11,11 @@
 html, body {
     overflow-x: hidden; /* Remove rolagem horizontal */
 }
-
-*{
-    margin: 0;
-    padding: 0;
+h1 {
+    font-size: 1.75rem; /* 28px */
+}
+h2 {
+    font-size: 1.5rem; /* 24px */
 }
 
 body {
@@ -73,21 +74,28 @@ header > nav > ul li a:hover {
 }
 
 #home{
-    margin-top: 10%;
+    margin-top: 15%;
     flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #home > h2 {
     text-align: center;
-    margin-bottom: 25px;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 .main {
-    position: relative;
-    top: 30%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 4rem;
+    gap: 15px;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .main > #form {
@@ -107,18 +115,17 @@ header > nav > ul li a:hover {
     justify-content: center;
     align-items: center;
     height: fit-content;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 
 .main > #form > .data-processing input {
-    width: 90%;
+    width: 100%;
     height: 1.6rem;
-    padding: 3px 4px 3px 5px;
+    padding: 3px 4px 0 5px;
     border: none;
     font-size: medium;
-    outline: none;
-    
+    outline: none;    
 }
 
 i {
@@ -126,7 +133,7 @@ i {
     font-weight: 800;
 }
 
-.main > #form > .data-processing button, .main > #form > .data-response button  {
+.main > #form > .data-processing button, #home > .data-response button  {
     background-color: transparent;
     box-shadow: none;
     border: none;
@@ -136,9 +143,13 @@ i {
     cursor: pointer;
 }
 
-.main > #form button {
+.main > #form button{
     margin-left: 2%;
     margin-right: 2%;
+}
+#home .data-response button {
+    margin-left: 2%;
+    margin-right: 2.7%;
 }
 
 
@@ -152,19 +163,20 @@ i {
 
 
 
-.main > #form > .data-response {
-    margin-top: 30px; 
+#home > .data-response {
     background-color: white; 
     border-radius: 10px; 
     display: flex; 
-    justify-content: space-between; 
+    justify-content: center; 
     align-items: center; 
     height: 2.9rem; 
+    width: 50%;
 }
 
-.main > #form > .data-response p {
+#home >  .data-response p {
     color: #948989;
-    width: 95%;
+    width: 100%;
+    margin-left: 5px;
 }
 
 footer{
@@ -185,15 +197,23 @@ footer .social-icons{
     box-shadow: 0px 4px 6px rgba(32, 53, 63, 0.2);
     margin: 0;
     border-radius: 10px;
+    border-bottom: 3px solid #180352;
+    margin-bottom: 1%;
 }
 
 .social-icons i {
     font-size: 1.9rem;
 }
 
-.social-icons i:hover{
+.social-icons a {
+    text-decoration: none;
+    color: #00A9FF;
+}
+
+.social-icons a:hover{
     scale: 1.2;
     transition: .4s;
+    color: #180352;
 }
 
 
@@ -202,6 +222,7 @@ footer .social-icons{
 
     #ham-menu {
         display: block;
+        color: #180352;
     }
 
     header {
@@ -227,12 +248,13 @@ footer .social-icons{
         z-index: 1000;
         transition: 1s;
         gap: 0;
-        background-color: #89CFF3;
+        background-color: #CDF5FD;
 
     }
 
     #home{
-        margin-top: 55%;
+        position: relative;
+        top: 150px;
     }
 
     .active{
@@ -243,8 +265,8 @@ footer .social-icons{
     h1 {
         font-size: 1.75rem; /* 28px */
       }
-      h2 {
-        font-size: 1.5rem; /* 24px */
+    h2 {
+        font-size: 1.4rem !important; /* 24px */
       }
 
     .main {
@@ -253,7 +275,6 @@ footer .social-icons{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 4rem;
     }
 
     .main > #form {
@@ -266,7 +287,10 @@ footer .social-icons{
         font-size: .8rem;
     }
 
-    .main > #form > .data-response p {
+    #home .data-response {
+        width: 95%;
+    }
+    #home .data-response p {
         width: 80%;
         font-size: .8rem;
     }
@@ -287,6 +311,6 @@ footer .social-icons{
 }
 
 
-.main > #form > .hidden {
+.hidden {
     display: none !important;
 }

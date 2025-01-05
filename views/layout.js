@@ -7,3 +7,4 @@ menuIcon.addEventListener("click", ()=>{
        navigationBar.classList.toggle('active')
 })
 
+document.querySelector('.data-response').classList.ad('hidden')

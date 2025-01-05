@@ -61,8 +61,15 @@ header > nav > ul li {
 header > nav > ul li a {
     text-decoration: none;
     font-size: 1.7rem;
-    color: black;
+    color: #180352;
     text-transform: capitalize;
+}
+
+header > nav > ul li a:hover {
+    text-decoration: underline;
+    color: #00A9FF;
+    transition: .3s ease;
+    
 }
 
 #home{
@@ -193,6 +200,9 @@ footer .social-icons{
 @media (max-width: 578px){
 
 
+    #ham-menu {
+        display: block;
+    }
 
     header {
         padding: 2.5%;

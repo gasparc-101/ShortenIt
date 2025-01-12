@@ -193,6 +193,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: .9%;
 }
 
 footer .social-icons{
@@ -206,7 +207,6 @@ footer .social-icons{
     margin: 0;
     border-radius: 10px;
     border-bottom: 3px solid #433D8B;
-    margin-bottom: 1%;
 }
 
 .social-icons i {
@@ -309,6 +309,7 @@ footer .social-icons{
     footer {
         height: 7vh; /* Adapta o tamanho */
         padding: 10px;
+        margin-bottom: 3%;
 
     }
 

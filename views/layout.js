@@ -1,8 +1,6 @@
 let menuIcon = document.querySelector('.fa-bars')
 let navigationBar = document.querySelector('.bar')
-
 let listItem = document.querySelectorAll('.link')
-
 let showData = document.querySelector('.data-response')
 let send = document.querySelector('.submit')
 const copyButton = document.querySelector('.send-copy');
@@ -19,13 +17,13 @@ showData.classList.add('hidden')
 send.addEventListener('click', (event)=>{
        event.preventDefault()
 
-setTimeout(() => {
-       showData.classList.remove('hidden')
-}, 2000); // 2000 milliseconds = 2 seconds
+       setTimeout(() => {
+              showData.classList.remove('hidden')
+       }, 2000); // 2000 milliseconds = 2 seconds
 
-setTimeout(() => {
-       showData.classList.add('hidden')
-}, 30000); 
+       setTimeout(() => {
+              showData.classList.add('hidden')
+       }, 30000); 
 })  
 
 document.querySelector('.default').classList.add('link-active')

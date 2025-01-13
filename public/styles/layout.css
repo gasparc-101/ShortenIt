@@ -285,11 +285,6 @@ footer .social-icons{
         left: 0;
         transition: 1s;
     }
-
-    .link-active {
-        text-decoration: underline;
-        color: #00A9FF;
-    }
     
     h1 {
         font-size: 1.75rem; /* 28px */
@@ -342,4 +337,9 @@ footer .social-icons{
 
 .hidden {
     display: none !important;
+}
+
+.link-active {
+    text-decoration: underline;
+    color: #00A9FF;
 }

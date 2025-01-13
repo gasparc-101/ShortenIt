@@ -5,6 +5,8 @@ let listItem = document.querySelectorAll('.link')
 
 let showData = document.querySelector('.data-response')
 let send = document.querySelector('.submit')
+const copyButton = document.querySelector('.send-copy');
+const paragraph = document.querySelector('.response-link');
 
 
 menuIcon.addEventListener("click", ()=>{
@@ -39,3 +41,20 @@ listItem.forEach((item)=>{
               item.classList.toggle('link-active')
        })
 })
+
+
+console.log(`${copyButton}, ${paragraph}`)
+
+
+copyButton.addEventListener('click', () => {
+       // Use navigator.clipboard.writeText to copy text
+       navigator.clipboard.writeText(paragraph.textContent)
+           .then(() => {
+               // Optional: Alert the user that the text was copied
+               alert('Text copied to clipboard!');
+           })
+           .catch(err => {
+               // Handle any errors
+               console.error('Failed to copy text: ', err);
+           });
+   });

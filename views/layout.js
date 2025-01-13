@@ -4,7 +4,7 @@ let navigationBar = document.querySelector('.bar')
 let listItem = document.querySelectorAll('.link')
 
 let showData = document.querySelector('.data-response')
-let send = document.querySelector('.fa-paper-plane')
+let send = document.querySelector('.submit')
 
 
 menuIcon.addEventListener("click", ()=>{

@@ -151,17 +151,28 @@ i {
     margin-right: 2%;
 }
 
+
+.main  #form button{
+    color: white;
+}
+
+.main > #form > .data-processing .submit {
+    height: fit-content;
+    width: 30px;
+}
+
+.main > #form > .data-processing .submit:hover {
+    color: #80C4E9 !important;
+    scale: 1.2;
+    transition: .3s;
+}
+
 #home .data-response button {
     margin-left: 2%;
     margin-right: 2.7%;
 }
 
-
-.main  #form button i, .data-response i {
-    color: white;
-}
-
-.main > #form button i:hover, #home >  .data-response .fa-copy:hover {
+#home >  .data-response .fa-copy:hover {
 
     color: #80C4E9;
     scale: 1.2;

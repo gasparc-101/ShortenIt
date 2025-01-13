@@ -170,6 +170,7 @@ i {
 #home .data-response button {
     margin-left: 2%;
     margin-right: 2.7%;
+    color: #ffffff;
 }
 
 #home >  .data-response .fa-copy:hover {
@@ -283,6 +284,11 @@ footer .social-icons{
     .active{
         left: 0;
         transition: 1s;
+    }
+
+    .link-active {
+        text-decoration: underline;
+        color: #00A9FF;
     }
     
     h1 {

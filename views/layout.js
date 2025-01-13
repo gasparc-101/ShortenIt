@@ -26,10 +26,16 @@ setTimeout(() => {
 }, 30000); 
 })  
 
+document.querySelector('.default').classList.add('link-active')
+
 
 listItem.forEach((item)=>{
        item.addEventListener("click", (event)=>{
               menuIcon.classList.remove('fa-times')
               navigationBar.classList.remove('active')
+
+              listItem.forEach((link) => link.classList.remove('link-active'));
+
+              item.classList.toggle('link-active')
        })
 })

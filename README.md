@@ -10,11 +10,14 @@
 
 ## Technology stack
 1. HTML
-2. CSS (with bootstrap)
+2. CSS
 3. JavaScript
-4. Free & public API
+4. Node.js + expressj.s
+5. Free & public API
 
 ## How it works
+
 The project is straightforward. it basically contains a field where the user is going to paste and send the long link, and a short link is gonna be delivered somewhere in the form. the user can simply copy the link and start using it.
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.

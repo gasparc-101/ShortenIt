@@ -402,7 +402,7 @@ form .submit-btn:hover{
     transition: .5s;
 }
 
-form input{
+#home-feedback form input{
     margin-bottom: 2rem;
 }
 @media (max-width: 578px){

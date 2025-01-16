@@ -238,12 +238,12 @@ footer .social-icons{
     color: #ffffff;
 }
 
-#home-about{
+#home-about, #feedback{
     display: grid;
     place-items: center;
     height: 100vh;
 }
-#about {
+#about, #home-feedback {
     position: relative;
     display: grid;
     grid-template-columns: 2fr 2fr;
@@ -253,18 +253,26 @@ footer .social-icons{
     width: 90%;
 }
 
-#about .image {
-    background-color: transparent;
+#about .image, #home-feedback .image {
     display: grid;
     place-items: center;
 
+
 }
 
-#about .image img {
+#home-feedback .image {
+    order: 0;
+}
+
+#home-feedback form {
+    place-items: center;
+}
+
+img {
     height: 75vh;
 }
 
-#about .content {
+#about .content, #home-feedback .form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -272,12 +280,22 @@ footer .social-icons{
     text-align: justify;
     padding: 1% 2% 1% 2%;
     row-gap: 1.2rem;
-
-    line-height: 1.5;
 }
 
-#about .content h2, #about .content h3 {
+#about .content h2, #about .content h3, #home-feedback h2{
     align-self: flex-start;
+}
+
+#home-feedback h2{
+    padding-left: 6%;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#home-feedback h2 > span {
+    color: rgb(143, 127, 127);
+    font-size: .99rem;
+    line-height: normal;
 }
 
 #about .content h2 {
@@ -317,9 +335,75 @@ footer .social-icons{
     color: #00A9FF;
 }
 
+form {
+    background-color: transparent;
+    padding: 10px;
+    height: 50%;
+    width: 90%;
+}
+
+form .name-email {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 2rem;
+    margin-bottom: 2%;
+    padding: px 0 5px 0;
+}
+
+form textarea {
+    margin-top: 2%;
+    height: 53%;
+    width: 90%;
+    text-align: left;
+    resize: none;
+    padding: 10px 0 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #00A9FF;
+    color: white;
+    font-size: 1rem;
+}
 
 
+form .none {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #00A9FF;
+    color: #ffffff;
+    width: 250px;
+    font-size: .9rem;
+}
 
+form * {
+    outline: none;
+}
+
+form .submit-btn {
+    border: none;
+    background-color: transparent;
+    color: #FFF6E9;
+    background-color: #00A9FF;
+    height: 2rem;
+    width: 200px;
+    border-radius: 15px;
+    position: relative;
+    top: 20px;
+    left: 63%;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+
+form .submit-btn:hover{
+    background-color: #39b8f8;
+    transition: .5s;
+}
+
+form input{
+    margin-bottom: 2rem;
+}
 @media (max-width: 578px){
 
 

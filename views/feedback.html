@@ -28,7 +28,69 @@
         </nav>
     </header>
 
-    <script src="layout.js"></script>
+    <section id="feedback">
 
+        <div id="home-feedback">
+            <div class="form">
+                <h2>
+                    Give your feedback <br>
+                    <span>
+                        It is pretty important for us ...
+                    </span>
+                </h2>
+                <p>
+                    
+                </p>
+                <form action="submit" method="post">
+
+                    <div class="name-email">
+                      <!--
+                        
+                       <label for="fullname" name="fname"></label>
+                        <label for="email address" name="email"></label>
+                      
+                      --> 
+                        <input type="text" id="fname" placeholder="Full Name" class="none">
+                        </p>
+                        <p>
+                            <input type="email" id="email" placeholder="E-mail address" class="none"> 
+                        </p>
+                    </div>
+                   <p>
+                    <p>
+                        <label for="subject"></label>
+                        <select name="subject" id="suject" class="none">
+                            <option value="subject"> choose your subject</option>
+                            <option value="greeting"> Just saying  hi</option>
+                            <option value="bug"> Bug correction</option>
+                            <option value="ux/ui-improvements">UX/UI improvements</option>
+                        </select>
+                    </p>
+
+
+                    <p>
+                        <label for="message" id="message"></label>
+                    </p>
+                    <textarea name="message" id="message" placeholder="your suggestion goes here">
+                    </textarea>
+                    <br>
+
+                    <button class="submit-btn">
+                        Submit
+                    </button>
+                </form>
+            
+            </div>
+
+            <div class="image">
+                <img src="/public/images/manager.png" alt="">
+            </div>
+        </div>
+
+    </section>
+
+   
+    
+    <script src="layout.js"></script>
 </body>
 </html>

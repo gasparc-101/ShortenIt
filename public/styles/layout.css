@@ -9,7 +9,7 @@
 }
 
 html, body {
-    overflow-x: hidden; /* Remove rolagem horizontal */
+    overflow-x: show; /* Remove rolagem horizontal */
 }
 h1 {
     font-size: 1.75rem; /* 28px */
@@ -536,6 +536,60 @@ form .submit-btn:hover{
         margin-top: 15px;
         text-align: right;
     }
+
+    /*responsive feedback*/
+
+    #home-feedback {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #home-feedback .image{
+        display: none;
+    }
+
+    #home-feedback .form {
+        display: block;
+        height: 80vh;
+        width: 100%;
+    }
+
+    #home-feedback .form h2 {
+        display: block;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    #home-feedback .form h2 span {
+        letter-spacing: 1.4px;
+    }
+
+    #home-feedback form .name-email {
+        flex-direction: column;
+    }
+
+    #home-feedback form select {
+        position: relative;
+        top: 3.5rem;
+    }
+
+    #home-feedback form button {
+        top: 40%;
+        left: auto;
+        align-self: center;
+        width: 30%;
+    }
+
+    #home-feedback form textarea {
+        position: relative;
+        top: 30%;
+    }
+
+    #home-feedback {
+    display: none;
+    }
+
+
 }
 
 .hidden {

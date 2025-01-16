@@ -408,6 +408,12 @@ form .submit-btn:hover{
 #home-feedback form input{
     margin-bottom: 2rem;
 }
+
+#home-about .mobile-feedback {
+    display: none;
+}
+
+
 @media (max-width: 578px){
 
 
@@ -503,8 +509,34 @@ form .submit-btn:hover{
     footer .social-icons i{
         font-size: 1.5rem;
     }
-}
 
+    /*----about responsive*/
+    #about {
+        display: flex;
+        flex-direction: column;
+    }
+    #about .image {
+        display: none;
+    }
+
+    #about .content {
+        position: relative;
+        top: 5%;
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 400px;
+    }
+
+    #about #to-feedback a, #about #to-feedback button {
+        display: none;
+    }
+
+    #home-about .mobile-feedback {
+        display: block;
+        margin-top: 15px;
+        text-align: right;
+    }
+}
 
 .hidden {
     display: none !important;

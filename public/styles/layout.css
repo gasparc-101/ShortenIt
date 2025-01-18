@@ -558,6 +558,7 @@ form .submit-btn:hover{
         display: block;
         text-align: left;
         padding-left: 0;
+        margin-bottom: 15%;
     }
 
     #home-feedback .form h2 span {
@@ -566,15 +567,24 @@ form .submit-btn:hover{
 
     #home-feedback form .name-email {
         flex-direction: column;
+        padding: 0;
+        width: 100%;
+        align-items: flex-start;
+        height: fit-content;
+    }
+
+    #home-feedback form input {
+        width: 100%;
     }
 
     #home-feedback form select {
         position: relative;
         top: 3.5rem;
+        width: 100%;
     }
 
     #home-feedback form button {
-        top: 40%;
+        top: 30%;
         left: auto;
         align-self: center;
         width: 30%;
@@ -582,11 +592,8 @@ form .submit-btn:hover{
 
     #home-feedback form textarea {
         position: relative;
-        top: 30%;
-    }
-
-    #home-feedback {
-    display: none;
+        top: 15%;
+        width: 100%;;
     }
 
 

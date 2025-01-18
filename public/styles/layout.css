@@ -78,7 +78,7 @@ header > nav > ul li a:hover {
 
 #home{
     margin-top: 15%;
-    flex:1;
+    flex: .986;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -203,9 +203,7 @@ i {
 
 footer{
     width: 100%; /* Garante que ocupe toda a largura */
-    height: 6vh; /* Altura fixa */
-    position: fixed;
-    bottom: 0;
+    height: 4.5vh; /* Altura fixa */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -241,10 +239,15 @@ footer .social-icons{
 }
 
 /*Feedback Page*/
-#home-about, #feedback{
+#home-about{
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: 93vh;
+}
+#feedback {
+    height: 93vh;
+    display: grid;
+    place-items: center;
 }
 #about, #home-feedback {
     position: relative;
@@ -450,14 +453,15 @@ form .submit-btn:hover{
         background-color: #17153B;
 
     }
+    
 
-    #home{
-        position: relative;
+    #home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        height: 20vh;
-        margin-bottom: 15rem;
+        min-height: auto;
     }
-
 
 
     .active{
@@ -479,7 +483,7 @@ form .submit-btn:hover{
         align-items: center;
     }
 
-    .main > #form {
+    .main > #form-home {
         width: 95%;
     }
 

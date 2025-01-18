@@ -204,6 +204,8 @@ i {
 footer{
     width: 100%; /* Garante que ocupe toda a largura */
     height: 6vh; /* Altura fixa */
+    position: fixed;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;

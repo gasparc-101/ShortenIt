@@ -251,6 +251,7 @@ i {
 
 #about-items p {
     line-height: 1.5;
+    text-align: justify;
 }
 
 #about-items ul li {
@@ -525,6 +526,7 @@ form .submit-btn:hover{
     footer {
         height: auto; /* Adjust footer height for mobile */
         padding: 1rem 0; /* Add some padding for spacing */
+        margin-top: auto;
     }
 
     footer .social-icons {
@@ -536,6 +538,20 @@ form .submit-btn:hover{
     }
 
     /*----about responsive*/
+
+    #about {
+        height: fit-content;
+    }
+    #about-items {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        margin-bottom: 30%;
+    }
+
+    #about-items .image {
+        display: none;
+    }
 
 
     /*responsive feedback*/

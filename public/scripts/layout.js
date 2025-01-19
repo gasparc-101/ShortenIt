@@ -15,7 +15,18 @@ menuIcon.addEventListener("click", ()=>{
 showData.classList.add('hidden')
 
 send.addEventListener('click', (event)=>{
-       event.preventDefault()
+
+       event.preventDefault(); // Prevent the form's default behavior
+
+       const input = document.querySelector('#name'); // Select the input field
+       const inputValue = input.value.trim(); // Get the trimmed value
+
+       if (!inputValue) {
+              // If the input is empty or contains only spaces
+              alert('Please paste your link in the input field.');
+              input.focus(); // Optionally focus on the input field
+              return; // Stop further execution
+       }
 
        setTimeout(() => {
               showData.classList.remove('hidden')
@@ -23,7 +34,7 @@ send.addEventListener('click', (event)=>{
 
        setTimeout(() => {
               showData.classList.add('hidden')
-       }, 30000); 
+       }, 30000);
 })  
 
 document.querySelector('.default').classList.add('link-active')

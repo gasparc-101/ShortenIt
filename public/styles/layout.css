@@ -10,6 +10,7 @@
 
 html, body {
     overflow-x: show; /* Remove rolagem horizontal */
+    overflow-y: hidden;
 }
 h1 {
     font-size: 1.75rem; /* 28px */
@@ -28,6 +29,7 @@ body {
 
 header {
     padding: .7%;
+    background-color: #17153B;
     box-shadow: 0px 4px 6px rgba(0, 169, 255, 0.2);
     height: fit-content;
     position: fixed;
@@ -78,7 +80,7 @@ header > nav > ul li a:hover {
 
 #home{
     margin-top: 15%;
-    flex: .986;
+    flex: 0.95;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -270,8 +272,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    margin-top: auto; /* Push footer to the bottom */
+    /* Push footer to the bottom */
 }
 
 footer .social-icons{
@@ -285,6 +286,11 @@ footer .social-icons{
     margin: 0;
     border-radius: 10px;
     border-bottom: 3px solid #433D8B;
+}
+
+#gridded > footer {
+    position: relative;
+    top: 17.9vh;
 }
 
 .social-icons i {
@@ -441,10 +447,17 @@ form .submit-btn:hover{
     display: none;
 }
 
+#feed-gridded > footer {
+    position: relative;
+    bottom: 1px;
+}
+
 
 @media (max-width: 578px){
 
-
+    html, body {
+        overflow-y: auto;
+    }
     #ham-menu {
         display: block;
         color: #FFF6E9;
@@ -454,6 +467,7 @@ form .submit-btn:hover{
         padding: 2.5%;
         padding-left: 0;
         height: 6vh;
+        z-index: 900;
     }
 
     header > nav .logo, header > nav i{
@@ -467,12 +481,12 @@ form .submit-btn:hover{
         position: fixed;
         align-items: center;
         justify-content: space-around;
-        top: 15%;
+        top: 6.5%;
         width: 100vw;
-        height: 70vh;
+        height: 100vh;
         transition: 1s;
         gap: 0;
-        background-color: red;
+        background-color: #17153B;
 
     }
     
@@ -553,19 +567,25 @@ form .submit-btn:hover{
         display: none;
     }
 
+    #about .content {
+        padding: 0 5px 0 5px;
+    }
+
 
     /*responsive feedback*/
 
-    #home-feedback {
-        display: flex;
-        flex-direction: column;
-
+    #feedback{
+        height: 80vh;
+        padding-bottom: 0;
+        box-sizing: border-box;
     }
 
     #home-feedback {
         grid-template-columns: 1fr; /* Stack content vertically */
         gap: 15px; /* Adjust spacing */
         height: auto; /* Allow height to adjust */
+        position: relative;
+        top: 10%;
     }
 
     #home-feedback .image{
@@ -574,7 +594,7 @@ form .submit-btn:hover{
 
     #home-feedback .form {
         position: relative;
-        top: 10%;
+        top: 5vh;
         display: block;
         height: 80vh;
         width: 100%;

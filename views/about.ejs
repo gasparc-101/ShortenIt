@@ -12,34 +12,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About project</title>
 </head>
-<body>
+<body id="gridded">
 
     <%- include("partials/header.ejs") %>
 
-    <div id="home-about">
-
-        <section id="about">
+    <section id="about">
+        <div id="about-items">
             <div class="image">
                 <img src="/images/rb_8174.png" alt="">
             </div>
-            <div class="content">
-                <h2>
-                    About the project
-                </h2>
 
-                <div class="content-items">
+            <div class="content">
+
+                <div class="text-content">
+
+                    <h2>
+                        About the application
+                    </h2>
                     <p>
                         <b>ShortenIt </b> is a web application that allows the user to reduce long links to shorter ones. It takes an input from the user, once the user send the link, it returns a shortened functional link.
                     </p>
-
+    
                     <h3>
                         Goals
                     </h3>
-
+    
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio debitis fugiat modi veritatis magnam maxime nihil aliquam cum quibusdam, commodi dolore ratione mollitia dolorem at voluptatibus, ipsam ducimus perspiciatis. Alias?
                     </p>
-
+    
                     <h3>
                         Features
                     </h3>
@@ -47,23 +48,23 @@
                         <li>
                             <b>Basic Link Shortening </b>- Input a long URL and receive a shorter version.
                         </li>
-
+    
                         <li>
                              <b>
                                 Ad-Free and Minimalist Interface
                              </b> - simplicity for best user experience, with less distractions.
                         </li>
-
+    
                         <li>
-                            <b> o Login Required </b> - users can shorten their links without the need of having an account.
+                            <b> No Login Required </b> - users can shorten their links without the need of having an account.
                         </li>
-
+    
                     </ul>
-
+    
                     <h3>
                         Here's how it works ...
                     </h3>
-
+    
                     <p>
                         It's pretty straightforward! <br>
                         The web application contains a field where the user is going to paste and send the long link. After that, the user must click on the send button. <br> Once done that, the link is sent to the server and the server returns the shortened and functional link, in less than 3s.
@@ -71,33 +72,13 @@
                         Afterwards, the user has 30 seconds to copy the link and start using it.
                     </p>
 
-                    <div id="to-feedback">
-                        <a href="feedback.html">
-                            Click here if you have sugestions
-                        </a>
-
-                        <button>
-                            <i>
-                                £
-                            </i>
-                        </button>
-                    </div>
-
-                    <div class="mobile-feedback">
-                        <a href="feedback.html" >
-                            Click here if you have sugestions
-    
-                            <i>
-                                £
-                            </i>
-                        </a>
-
-                    </div>
                 </div>
+               
             </div>
-        </section>
+        </div>
+    </section>
 
-    </div>
+    
     <%- include("partials/footer.ejs") %>
     <script src="/scripts/layout.js"></script>
 </body>

@@ -99,7 +99,6 @@ header > nav > ul li a:hover {
     height: fit-content;
     width: 100%;
     margin-bottom: 1rem;
-    z-index: -1 !important;
 }
 
 .main  #form-home {
@@ -202,13 +201,76 @@ i {
     margin-left: 5px;
 }
 
-footer{
-    width: 100%; /* Garante que ocupe toda a largura */
-    height: 4.5vh; /* Altura fixa */
+/*------- about page-----*/
+#about {
+    position: relative;
+    top: 12vh;
+    height: 75vh;
+    display: grid;
+    place-items: center;
+}
+
+#about-items {
+    height: 70vh;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-row: 1fr;
+    box-sizing: border-box;
+    gap: 15px;
+}
+
+#about-items .image {
+    display: grid;
+    place-items: center;
+}
+
+#about-items .image img{
+    height: 70vh;
+}
+
+#about-items .content {
+    padding-left: 10px;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+}
+
+#about-items .text-content {
+    height: fit-content;
+}
+
+#about-items h2 {
+    margin-bottom: 1rem;
+}
+
+#about-items h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#about-items p {
+    line-height: 1.5;
+}
+
+#about-items ul li {
+    list-style-type: none;
+}
+
+
+
+
+
+/*-----------------------*/
+
+footer {
+    width: 100%;
+    height: 4.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: .9%;
+    position: relative;
+    margin-top: auto; /* Push footer to the bottom */
 }
 
 footer .social-icons{
@@ -240,18 +302,12 @@ footer .social-icons{
 }
 
 /*Feedback Page*/
-#home-about{
-    display: grid;
-    place-items: center;
-    height: 93vh;
-}
 #feedback {
     height: 93vh;
     display: grid;
     place-items: center;
-    z-index: -1;
 }
-#about, #home-feedback {
+#home-feedback {
     position: relative;
     display: grid;
     grid-template-columns: 2fr 2fr;
@@ -261,7 +317,7 @@ footer .social-icons{
     width: 90%;
 }
 
-#about .image, #home-feedback .image {
+#home-feedback .image {
     display: grid;
     place-items: center;
 
@@ -280,7 +336,7 @@ img {
     height: 75vh;
 }
 
-#about .content, #home-feedback .form {
+#home-feedback .form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -290,7 +346,7 @@ img {
     row-gap: 1.2rem;
 }
 
-#about .content h2, #about .content h3, #home-feedback h2{
+#home-feedback h2{
     align-self: flex-start;
 }
 
@@ -306,42 +362,6 @@ img {
     line-height: normal;
 }
 
-#about .content h2 {
-    color: #47ffff;
-}
-
-#about .content h3 {
-    margin-top: 1rem;
-    margin-bottom: .7rem;
-    color: aqua;
-}
-
-#about .content p {
-    text-align: justify;
-}
-
-#about .content ul li {
-    list-style: none;
-}
-
-#about .content #to-feedback {
-    position: absolute;
-    bottom: 2%;
-    right: 0%;
-    display: flex;
-    gap: 15px;
-    padding: .7%;
-}
-#about .content #to-feedback a {
-    color: aqua;
-    text-decoration: double;    
-}
-#about .content #to-feedback button {
-    width: 30px;
-    background-color: transparent;
-    border: none;
-    color: #00A9FF;
-}
 
 form {
     background-color: transparent;
@@ -416,7 +436,7 @@ form .submit-btn:hover{
     margin-bottom: 2rem;
 }
 
-#home-about .mobile-feedback {
+.mobile-feedback {
     display: none;
 }
 
@@ -449,7 +469,6 @@ form .submit-btn:hover{
         top: 15%;
         width: 100vw;
         height: 70vh;
-        z-index: 999;
         transition: 1s;
         gap: 0;
         background-color: red;
@@ -472,10 +491,10 @@ form .submit-btn:hover{
     }
     
     h1 {
-        font-size: 1.75rem; /* 28px */
+        font-size: 1.75rem;
       }
     h2 {
-        font-size: 1.4rem !important; /* 24px */
+        font-size: 1.4rem !important;
       }
 
     .main {
@@ -504,10 +523,8 @@ form .submit-btn:hover{
     }
 
     footer {
-        height: 7vh; /* Adapta o tamanho */
-        padding: 10px;
-        margin-bottom: 3%;
-
+        height: auto; /* Adjust footer height for mobile */
+        padding: 1rem 0; /* Add some padding for spacing */
     }
 
     footer .social-icons {
@@ -519,38 +536,20 @@ form .submit-btn:hover{
     }
 
     /*----about responsive*/
-    #about {
-        display: flex;
-        flex-direction: column;
-        z-index: -1;
-    }
-    #about .image {
-        display: none;
-    }
 
-    #about .content {
-        position: relative;
-        top: 5%;
-        width: 100%;
-        height: fit-content;
-        margin-bottom: 400px;
-    }
-
-    #about #to-feedback a, #about #to-feedback button {
-        display: none;
-    }
-
-    #home-about .mobile-feedback {
-        display: block;
-        margin-top: 15px;
-        text-align: right;
-    }
 
     /*responsive feedback*/
 
     #home-feedback {
         display: flex;
         flex-direction: column;
+
+    }
+
+    #home-feedback {
+        grid-template-columns: 1fr; /* Stack content vertically */
+        gap: 15px; /* Adjust spacing */
+        height: auto; /* Allow height to adjust */
     }
 
     #home-feedback .image{
@@ -558,6 +557,8 @@ form .submit-btn:hover{
     }
 
     #home-feedback .form {
+        position: relative;
+        top: 10%;
         display: block;
         height: 80vh;
         width: 100%;
@@ -566,12 +567,14 @@ form .submit-btn:hover{
     #home-feedback .form h2 {
         display: block;
         text-align: left;
-        padding-left: 0;
-        margin-bottom: 15%;
+        padding-left: 8px;
+        margin-bottom: 8%;
+        font-size: 1.3rem !important;
     }
 
     #home-feedback .form h2 span {
         letter-spacing: 1.4px;
+        display: none;
     }
 
     #home-feedback form .name-email {

@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-
+/* interacao com a barra de navegacao*/
 app.get("/", (req, res)=>{
     res.render('index.ejs')
 })
@@ -25,3 +25,5 @@ app.get('/feedback', (req, res)=>{
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}.`)
 })
+/**---------------------------------------------- */
+

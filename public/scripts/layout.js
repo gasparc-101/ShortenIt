@@ -16,7 +16,7 @@ showData.classList.add('hidden')
 
 send.addEventListener('click', (event)=>{
 
-     //  event.preventDefault(); // Prevent the form's default behavior
+       event.preventDefault(); // Prevent the form's default behavior
 
        const input = document.querySelector('#name'); // Select the input field
        const inputValue = input.value.trim(); // Get the trimmed value

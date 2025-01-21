@@ -28,7 +28,7 @@
                 <p>
                     
                 </p>
-                <form action="submit" method="post">
+                <form action="/send-email" method="post">
 
                     <div class="name-email">
                       <!--
@@ -37,9 +37,9 @@
                         <label for="email address" name="email"></label>
                       
                       --> 
-                        <input type="text" id="fname" placeholder="Full Name" class="none">
+                        <input type="text" id="fname" placeholder="Full Name" class="none" name="full_name">
                     
-                        <input type="email" id="email" placeholder="E-mail address" class="none"> 
+                        <input type="email" id="email" name="email" placeholder="E-mail address" class="none"> 
         
                     </div>
                    <p>
@@ -47,9 +47,9 @@
                         <label for="subject"></label>
                         <select name="subject" id="suject" class="none">
                             <option value="subject"> choose your subject</option>
-                            <option value="greeting"> Just saying  hi</option>
-                            <option value="bug"> Bug correction</option>
-                            <option value="ux/ui-improvements">UX/UI improvements</option>
+                            <option value="Greetings"> Just saying  hi</option>
+                            <option value="Bug correction"> Bug correction</option>
+                            <option value="UX/UI Improvements">UX/UI improvements</option>
                         </select>
                     </p>
 

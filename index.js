@@ -1,17 +1,21 @@
 import bodyParser from "body-parser";
 import axios from "axios";
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 8080;
 const LINK_URL = "https://api.tinyurl.com/create"
-const BearerToken = 'NPgR9D2jXBjguoxqpDccXxHNW9YUltVLdmchLDCtk0Z7M4scE42A2cyZDkqP'
+const BearerToken = process.env.API_TOKEN;
+const my_email = process.env.EMAIL_ADDRESS;
 
 const config = {
     headers: { Authorization: `Bearer ${BearerToken}`,
     'Content-Type': 'application/json'
 },
   };
+
 
 // Middleware setup
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -63,6 +67,10 @@ app.post("/submit-link", async (req, res)=>{
             res.status(500).send("An error occurred while shortening the link.");
         }
 });
+
+app.post('/send-email',(req, res)=>{
+    console.log(req.body)
+})
 
 // Start the server
 app.listen(port, () => {

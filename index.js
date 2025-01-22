@@ -3,12 +3,14 @@ import axios from "axios";
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
+import nodemailer from "nodemailer"
 
 const app = express();
 const port = 8080;
 const LINK_URL = "https://api.tinyurl.com/create"
 const BearerToken = process.env.API_TOKEN;
 const my_email = process.env.EMAIL_ADDRESS;
+const my_pass = process.env.EMAIL_PASSWORD;
 
 const config = {
     headers: { Authorization: `Bearer ${BearerToken}`,
@@ -55,10 +57,10 @@ app.post("/submit-link", async (req, res)=>{
             );
     
         // Log the response from the API
-        console.log(response.data);
+        console.log(response.data.data.tiny_url);
     
         // You can send the shortened URL or other relevant data to the client
-        res.json({ shortUrl: response.data.link });
+        
 
         } catch (error) {
             console.log(`Error: ${error.message}`);
@@ -70,6 +72,32 @@ app.post("/submit-link", async (req, res)=>{
 
 app.post('/send-email',(req, res)=>{
     console.log(req.body)
+
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: my_email,
+            pass: my_pass
+        }
+    })
+
+    async function main() {
+        const info = await transporter.sendMail({
+            from : req.body.email,
+            to: my_email,
+            subject : `${req.body.subject}`,
+            html: `${req.body.message}`,
+            replyTo: req.body.email,
+
+        })
+
+        console.log("message sent: %s", info.messageId)
+    }
+
+    main().catch(console.error);
+
 })
 
 // Start the server

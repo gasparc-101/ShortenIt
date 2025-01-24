@@ -13,6 +13,8 @@ const BearerToken = process.env.API_TOKEN;
 const server_email = process.env.EMAIL_ADDRESS;
 const server_email_pass = process.env.EMAIL_PASSWORD;
 
+let shortened = ''
+
 const config = {
     headers: { Authorization: `Bearer ${BearerToken}`,
     'Content-Type': 'application/json'
@@ -28,11 +30,11 @@ app.use(express.json());
 
 // Route handlers
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs", {shortened : shortened});
 });
 
 app.get("/about", (req, res) => {
-    res.render("about");
+    res.render("about", );
 });
 
 app.get("/feedback", (req, res) => {
@@ -57,10 +59,15 @@ app.post("/submit-link", async (req, res)=>{
                 config
             );
     
+        shortened = response.data.data.tiny_url
+        
         // Log the response from the API
+        
         console.log(response.data.data.tiny_url);
     
         // You can send the shortened URL or other relevant data to the client
+
+        res.redirect('/')
         
 
         } catch (error) {

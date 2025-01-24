@@ -26,6 +26,7 @@
     
                 <form id="form-home" action="/submit-link" method="post">
     
+                   
                     <div class="data-processing">
                        
     
@@ -45,21 +46,26 @@
                 </form>
     
             </div>
-            <div class="data-response">
+
+            <% if (shortened !=='') { %>
+
+                <div class="data-response">
     
-                <button disabled>
-                    <i class="fa-regular fa-bell fa-shake"></i>
-                </button>
-                
-                <p class="response-link">
-                    https://shortened/#98D5
-                </p>   
-    
-                <button class="send-copy">
-                    <i class="fa-solid fa-copy send-copy"></i>
-                </button>
-    
-            </div>
+                    <button disabled>
+                        <i class="fa-regular fa-bell fa-shake"></i>
+                    </button>
+                    
+                    <p class="response-link">
+                        <%= shortened  %>
+                    </p>   
+        
+                    <button class="send-copy">
+                        <i class="fa-solid fa-copy send-copy"></i>
+                    </button>
+        
+                </div>
+
+            <% } %>
 
         
     </section>

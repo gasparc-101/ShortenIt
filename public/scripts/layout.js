@@ -12,44 +12,12 @@ menuIcon.addEventListener("click", ()=>{
        navigationBar.classList.toggle('active')
 })
 
-showData.classList.add('hidden')
-
-send.addEventListener('click', (event)=>{
-
-     //  event.preventDefault(); // Prevent the form's default behavior
-
-       const input = document.querySelector('#name'); // Select the input field
-       const inputValue = input.value.trim(); // Get the trimmed value
-
-       if (!inputValue) {
-              // If the input is empty or contains only spaces
-              alert('Please paste your link in the input field.');
-              input.focus(); // Optionally focus on the input field
-              return; // Stop further execution
-       }
-
+if (!showData.classList.contains('hidden')) {
+       // Hide the div after 30 seconds
        setTimeout(() => {
-              showData.classList.remove('hidden')
-       }, 2000); // 2000 milliseconds = 2 seconds
-
-       setTimeout(() => {
-              showData.classList.add('hidden')
-       }, 30000);
-})  
-
-document.querySelector('.default').classList.add('link-active')
-
-
-listItem.forEach((item)=>{
-       item.addEventListener("click", (event)=>{
-              menuIcon.classList.remove('fa-times')
-              navigationBar.classList.remove('active')
-
-              listItem.forEach((link) => link.classList.remove('link-active'));
-
-              item.classList.toggle('link-active')
-       })
-})
+           showData.classList.add('hidden');
+       }, 30000); // 30,000 milliseconds = 30 seconds
+   }
 
 
 console.log(`${copyButton}, ${paragraph}`)

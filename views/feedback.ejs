@@ -37,19 +37,19 @@
                         <label for="email address" name="email"></label>
                       
                       --> 
-                        <input type="text" id="fname" placeholder="Full Name" class="none" name="full_name">
+                        <input type="text" id="fname" placeholder="Full Name" class="none" name="full_name" required>
                     
-                        <input type="email" id="email" name="email" placeholder="E-mail address" class="none"> 
+                        <input type="email" id="email" name="email" placeholder="E-mail address" class="none" required> 
         
                     </div>
                    <p>
                     <p>
                         <label for="subject"></label>
-                        <select name="subject" id="suject" class="none">
+                        <select name="subject" id="suject" class="none" required>
                             <option value="subject"> choose your subject</option>
-                            <option value="Greetings"> Just saying  hi</option>
+                            <option value="Just saying hi"> Just saying  hi</option>
                             <option value="Bug correction"> Bug correction</option>
-                            <option value="UX/UI Improvements">UX/UI improvements</option>
+                            <option value="UX/UI improvements">UX/UI improvements</option>
                         </select>
                     </p>
 
@@ -57,7 +57,7 @@
                     <p>
                         <label for="message" id="message"></label>
                     </p>
-                    <textarea name="message" id="message" placeholder="your suggestion goes here"></textarea>
+                    <textarea name="message" id="message" placeholder="your suggestion goes here" required></textarea>
                     <br>
 
                     <button class="submit-btn">

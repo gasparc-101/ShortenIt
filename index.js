@@ -4,13 +4,14 @@ import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import nodemailer from "nodemailer"
+import fetch from "node-fetch"
 
 const app = express();
 const port = 8080;
 const LINK_URL = "https://api.tinyurl.com/create"
 const BearerToken = process.env.API_TOKEN;
-const my_email = process.env.EMAIL_ADDRESS;
-const my_pass = process.env.EMAIL_PASSWORD;
+const server_email = process.env.EMAIL_ADDRESS;
+const server_email_pass = process.env.EMAIL_PASSWORD;
 
 const config = {
     headers: { Authorization: `Bearer ${BearerToken}`,
@@ -78,22 +79,47 @@ app.post('/send-email',(req, res)=>{
         port: 465,
         secure: true,
         auth: {
-            user: my_email,
-            pass: my_pass
+            user: server_email,
+            pass: server_email_pass
         }
     })
 
     async function main() {
         const info = await transporter.sendMail({
-            from : req.body.email,
-            to: my_email,
-            subject : `${req.body.subject}`,
-            html: `${req.body.message}`,
-            replyTo: req.body.email,
+            from : `"Gaspar, from Syntaxis" <${server_email}>`,
+            to: req.body.email,
+            subject : `Your feedback has been received!`,
+            html: `
+            <h2>Thank you for your feedback!</h2>
+            <p>Hi, ${req.body.full_name}!</p>
+            <p>We’ve received your feedback with the subject <b>${req.body.subject}</b> and it will be taken into consideration for future updates to the app.</p>
+            <p>Your input is invaluable to us, and we’re always working to improve the user experience.</p>
+            <p>Best regards, <br> The Syntaxis Team</p>
 
+            `,
         })
 
+
+        // sending data to google forms
+
+        const formData = new URLSearchParams();
+        formData.append('entry.564836964', req.body.full_name)
+        formData.append('entry.123566139', req.body.email)
+        formData.append('entry.64796350', req.body.subject)
+        formData.append('entry.184176017', req.body.message)
+
+        const googleFormURL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSfHoEghmSgBW8E14VRUqLO6hibuGK0aYiP5_V48wmMplmeKbA/formResponse';
+
+        const response = await fetch(googleFormURL, {
+            method: 'POST',
+            body: formData,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        })
+
+
         console.log("message sent: %s", info.messageId)
+        const result = await response.text();
+        console.log('Form submitted to Google Form (preview):', result.substring(0, 200)); // Exibe os primeiros 200 caracteres
     }
 
     main().catch(console.error);

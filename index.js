@@ -42,7 +42,7 @@ app.get("/feedback", (req, res) => {
     res.render("feedback");
 });
 
-//api handling 
+//api handling
 
 app.post("/submit-link", async (req, res)=>{
 
@@ -51,30 +51,30 @@ app.post("/submit-link", async (req, res)=>{
     try {
         const url = req.body.link;
         console.log(url);
-    
+
         // POST request to the TinyURL API
         const response = await axios.post(
             LINK_URL,
             {
-                url: url, 
+                url: url,
             },
                 config
             );
-    
+
         shortened = response.data.data.tiny_url
-        
+
         // Log the response from the API
-        
+
         console.log(response.data.data.tiny_url);
-    
+
         // send the shortened URL or other relevant data to the client
 
         res.redirect('/')
-        
+
 
         } catch (error) {
 
-        
+
             console.log(`Error: ${error.message}`);
             //console.log(error.response?.data);
             res.send("an error occured while trying to shorten the link")
@@ -132,13 +132,13 @@ app.post('/send-email',(req, res)=>{
 
         console.log("message sent: %s", info.messageId)
         const result = await response.text();
-        console.log('Form submitted to Google Form (preview):', result.substring(0, 200)); // Exibe os primeiros 200 caracteres
+        console.log('Form submitted to Google Form (preview):', result.substring(0, 200));
     }
 
         res.render('feedback')
 
         main().catch(console.error);
-        
+
     } catch (error) {
         console.log(error.message)
         res.render('feedback')

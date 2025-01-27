@@ -7,12 +7,13 @@
 1. *Basic Link Shortening* - Input a long URL and receive a shorter version.
 2. *Ad-Free and Minimalist Interface* - simplicity and best user experience, with less distractions.
 3. *No Login Required* - users can shorten their links without the need of having an account.
+4. *Instant feedback* - users receive an email right after they sent a feedback message.
 
 ## Technology stack
-1. HTML
+1. HTML / EJS
 2. CSS
 3. JavaScript
-4. Node.js + expressj.s
+4. Node.js + express.js
 5. Free & public API
 
 ## How it works

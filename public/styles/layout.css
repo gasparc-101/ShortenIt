@@ -267,7 +267,6 @@ i {
 
 
 
-
 /*-----------------------*/
 
 footer {
@@ -650,6 +649,14 @@ form .submit-btn:hover{
         top: 15%;
         width: 100%;
     }
+
+
+
+    #about-gridded > footer {
+        position: relative;
+        top: 30%;
+    }
+    
 
 
 }

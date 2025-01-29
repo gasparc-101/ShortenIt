@@ -346,10 +346,6 @@ footer h5 {
     order: 0;
 }
 
-#home-feedback form {
-    place-items: center;
-}
-
 img {
     height: 75vh;
 }
@@ -424,6 +420,11 @@ form .none {
     margin-bottom: 15px;
 
 }
+
+form .select option {
+    background-color: #17153B;
+}
+
 
 form * {
     outline: none;
@@ -647,7 +648,7 @@ form .submit-btn:hover{
     #home-feedback form textarea {
         position: relative;
         top: 15%;
-        width: 100%;;
+        width: 100%;
     }
 
 

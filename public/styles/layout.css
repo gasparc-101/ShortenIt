@@ -316,6 +316,7 @@ footer h5 {
 /*Feedback Page*/
 #feed-gridded{
     display: grid;
+    overflow: hidden;
 }
 #feedback {
     height: 80vh;

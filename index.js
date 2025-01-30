@@ -7,7 +7,7 @@ import nodemailer from "nodemailer"
 import fetch from "node-fetch"
 
 const app = express();
-const port = 3000;
+const port = 8080;
 const LINK_URL = "https://api.tinyurl.com/create"
 const BearerToken = process.env.API_TOKEN;
 const server_email = process.env.EMAIL_ADDRESS;
@@ -141,7 +141,7 @@ app.post('/send-email',(req, res)=>{
 
     } catch (error) {
         console.log(error.message)
-        res.render('feedback')
+        res.render('feedback');
     }
 
 })

@@ -66,6 +66,26 @@
                 </div>
 
             <% } %>
+
+            <% if (error !== '') {%>
+
+                <div class="data-response" style="background-color: transparent;">
+    
+                    <p class="response-link" style="color: red; text-align: center;">
+
+                        <button disabled>
+                            <i class="fa-solid fa-triangle-exclamation fa-fade" style="color: red;"></i>
+                        </button>
+                        <%= error %>
+                    </p>   
+        
+                    <button class="send-copy">
+
+                    </button>
+        
+                </div>
+            
+            <% } %>
         
     </section>
 

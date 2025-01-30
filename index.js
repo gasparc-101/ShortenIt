@@ -13,6 +13,8 @@ const BearerToken = process.env.API_TOKEN;
 const server_email = process.env.EMAIL_ADDRESS;
 const server_email_pass = process.env.EMAIL_PASSWORD;
 
+let errorDict = { error : ''}
+let errorMessage = ''
 let shortened = ''
 let link = ''
 
@@ -31,7 +33,9 @@ app.use(express.json());
 
 // Route handlers
 app.get("/", (req, res) => {
-    res.render("index.ejs", {shortened : shortened,  error : "An error occured while trying to shorten the link", link : link});
+    res.render("index.ejs", {shortened : shortened,  error : errorMessage, link : link});
+
+    errorMessage = ''
 });
 
 app.get("/about", (req, res) => {
@@ -46,7 +50,6 @@ app.get("/feedback", (req, res) => {
 
 app.post("/submit-link", async (req, res)=>{
 
-    let link = req.body.link
     console.log(req.body);
     try {
         const url = req.body.link;
@@ -74,10 +77,11 @@ app.post("/submit-link", async (req, res)=>{
 
         } catch (error) {
 
-
-            console.log(`Error: ${error.message}`);
+            errorDict = { error : "an error occured while trying to shorten the link"}
+            errorMessage = errorDict.error;
+            console.log(`${errorMessage} : ${error.message}`);
             //console.log(error.response?.data);
-            res.send("an error occured while trying to shorten the link")
+            res.redirect('/')
         }
 });
 

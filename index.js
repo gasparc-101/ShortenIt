@@ -3,11 +3,12 @@ import axios from "axios";
 import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
+
 import nodemailer from "nodemailer"
 import fetch from "node-fetch"
 
 const app = express();
-const port = process.env.port || 3000;
+const port = 3000;
 const LINK_URL = "https://api.tinyurl.com/create"
 const BearerToken = process.env.API_TOKEN;
 const server_email = process.env.EMAIL_ADDRESS;

@@ -18,6 +18,11 @@ let errorMessage = ''
 let shortened = ''
 let link = ''
 
+let feedbackDict = { feedback : ''}
+let feedbackMessage = ''
+let feedbackError = ''
+let errorAlpha = ''
+
 const config = {
     headers: { Authorization: `Bearer ${BearerToken}`,
     'Content-Type': 'application/json'
@@ -43,7 +48,12 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/feedback", (req, res) => {
-    res.render("feedback");
+
+    res.render("feedback", {feedback : feedbackMessage, errorfeed : feedbackError, errorAlpha: errorAlpha});
+
+    feedbackMessage = ''
+    feedbackError = ''
+    errorAlpha = ''
 });
 
 //api handling
@@ -70,6 +80,8 @@ app.post("/submit-link", async (req, res)=>{
 
         console.log(response.data.data.tiny_url);
 
+
+
         // send the shortened URL or other relevant data to the client
 
         res.redirect('/')
@@ -85,7 +97,7 @@ app.post("/submit-link", async (req, res)=>{
         }
 });
 
-app.post('/send-email',(req, res)=>{
+app.post('/send-email', async(req, res)=>{
     console.log(req.body)
 
 
@@ -138,14 +150,20 @@ app.post('/send-email',(req, res)=>{
         const result = await response.text();
         console.log('Form submitted to Google Form (preview):', result.substring(0, 200));
     }
+    
+        await main()
 
-        res.render('feedback')
+        feedbackDict = {feedback : "Message sent successfully!"}
+        feedbackMessage = feedbackDict.feedback
 
-        main().catch(console.error);
+        res.redirect('feedback')
 
     } catch (error) {
-        console.log(error.message)
-        res.render('feedback');
+        feedbackDict = {feedback : 'An error occured while trying to send the message.'}
+        feedbackError = feedbackDict.feedback
+        errorAlpha = error.message
+        console.log(errorAlpha)
+        res.redirect('feedback');
     }
 
 })

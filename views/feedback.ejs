@@ -60,9 +60,23 @@
                     <textarea name="message" id="message" placeholder="your suggestion goes here" required></textarea>
                     <br>
 
-                    <button class="submit-btn">
-                        Submit
-                    </button>
+                    <div class="final">
+                        <% if(errorfeed === '' && errorAlpha =='') {%>
+                            <p class="feedback-response" style="color: green;">
+                                <%= feedback %>
+                            </p>
+                        <% } %>
+                        <% if (errorfeed !== '' && errorAlpha !== '' ) {%>
+                            <p class="feedback-response" style="color: red;">
+                                <%= errorfeed %>
+                            </p>
+                        <% } %>
+
+                        <button class="submit-btn">
+                            Submit
+                        </button>
+
+                    </div>
                 </form>
             
             </div>
@@ -76,5 +90,6 @@
 
     <%- include("partials/footer.ejs") %>
     <script src="/scripts/layout.js"></script>
+    <script src="/scripts/main.js"></script>
 </body>
 </html>

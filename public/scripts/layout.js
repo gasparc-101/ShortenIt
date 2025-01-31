@@ -6,7 +6,6 @@ let send = document.querySelector('.submit')
 const copyButton = document.querySelector('.send-copy');
 const paragraph = document.querySelector('.response-link');
 
-
 menuIcon.addEventListener("click", ()=>{
        menuIcon.classList.toggle('fa-times')
        navigationBar.classList.toggle('active')
@@ -20,11 +19,6 @@ if (!showData.classList.contains('hidden')) {
    }
 
 
-if (showData.classList.contains('error') && !showData.classList.contains('hidden')) {
-    setTimeout(()=>{
-        showData.classList.add('hidden');
-    }, 5000)
-}
 
 
 console.log(`${copyButton}, ${paragraph}`)

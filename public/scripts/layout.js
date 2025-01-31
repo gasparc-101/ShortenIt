@@ -20,6 +20,13 @@ if (!showData.classList.contains('hidden')) {
    }
 
 
+if (showData.classList.contains('error') && !showData.classList.contains('hidden')) {
+    setTimeout(()=>{
+        showData.classList.add('hidden');
+    }, 5000)
+}
+
+
 console.log(`${copyButton}, ${paragraph}`)
 
 

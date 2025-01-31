@@ -47,7 +47,7 @@
     
             </div>
 
-            <% if (shortened !=='') { %>
+            <% if (shortened !=='' && error === '') { %>
 
                 <div class="data-response">
     
@@ -67,7 +67,7 @@
 
             <% } %>
 
-            <% if (error !== '') {%>
+            <% if (error !== '' && !shortened) {%>
 
                 <div class="data-response" style="background-color: transparent;">
     

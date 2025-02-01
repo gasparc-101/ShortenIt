@@ -1,11 +1,16 @@
 import bodyParser from "body-parser";
+
 import axios from "axios";
+
 import express from "express";
+
 import dotenv from "dotenv";
 dotenv.config();
 
 import nodemailer from "nodemailer"
+
 import fetch from "node-fetch"
+
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -16,6 +21,7 @@ const __dirname = dirname(__filename);
 
 const app = express();
 const port = 3000;
+
 const LINK_URL = "https://api.tinyurl.com/create"
 const BearerToken = process.env.API_TOKEN;
 const server_email = process.env.EMAIL_ADDRESS;

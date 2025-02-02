@@ -94,7 +94,7 @@ app.post("/submit-link", async (req, res)=>{
 
         // Log the response from the API
 
-        console.log(response.data.data.tiny_url);
+        console.log(shortened);
 
 
 
@@ -105,7 +105,7 @@ app.post("/submit-link", async (req, res)=>{
 
         } catch (error) {
 
-            errorDict = { error : "an error occured while trying to shorten the link"}
+            errorDict = { error : "An error occured while trying to shorten the link"}
             errorMessage = errorDict.error;
             console.log(`${errorMessage} : ${error.message}`);
             //console.log(error.response?.data);

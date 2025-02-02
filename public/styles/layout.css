@@ -427,6 +427,7 @@ form textarea {
 form .none {
     background-color: transparent;
     border: none;
+    padding-bottom: 8px;
     border-bottom: 2px solid #00A9FF;
     color: #ffffff;
     width: 250px;
@@ -437,6 +438,8 @@ form .none {
 
 form .select option {
     background-color: #17153B;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
 }
 
 

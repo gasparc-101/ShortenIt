@@ -11,6 +11,10 @@ menuIcon.addEventListener("click", ()=>{
        navigationBar.classList.toggle('active')
 })
 
+if (!paragraph.innerText){
+    showData.classList.add('hidden')
+}
+
 if (!showData.classList.contains('hidden')) {
        // Hide the div after 30 seconds
        setTimeout(() => {

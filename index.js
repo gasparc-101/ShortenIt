@@ -28,6 +28,7 @@ const LINK_URL = "https://api.tinyurl.com/create"
 const BearerToken = process.env.API_TOKEN;
 const server_email = process.env.EMAIL_ADDRESS;
 const server_email_pass = process.env.EMAIL_PASSWORD;
+const secretkey = process.env.SESSION_SECRET; 
 
 let errorDict = { error : ''}
 let errorMessage = ''
@@ -55,7 +56,7 @@ app.set("view engine", "ejs");
 app.use(express.json());
 
 app.use(session({
-    secret: process.env.SESSION_SECRET, // Usando a variável de ambiente para o secret
+    secret: secretkey, // Usando a variável de ambiente para o secret
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }

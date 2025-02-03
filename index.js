@@ -4,8 +4,6 @@ import axios from "axios";
 
 import express from "express";
 
-import session from 'express-session'; 
-
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -55,24 +53,14 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.json());
 
-app.use(session({
-    secret: secretkey, // Usando a variável de ambiente para o secret
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false }
-}));
 
 // Route handlers
 app.get("/", (req, res) => {
 
-    const shortened = req.session.shortened;
-
-    // Após exibir, remova o link curto da sessão
-    delete req.session.shortened;
-
     res.render("index.ejs", {shortened : shortened,  error : errorMessage, link : link});
 
     errorMessage = ''
+    shortened = ''
 });
 
 app.get("/about", (req, res) => {
@@ -115,7 +103,6 @@ app.post("/submit-link", async (req, res)=>{
 
 
         // send the shortened URL or other relevant data to the client
-        req.session.shortened = shortened;
 
         res.redirect('/')
 

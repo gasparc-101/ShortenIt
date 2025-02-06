@@ -140,6 +140,7 @@ header > nav > ul li a:hover {
     font-size: medium;
     outline: none;    
     background-color: transparent !important;
+    caret-color: white !important;
 }
 
 .main #form-home .data-processing input:-webkit-autofill {

@@ -46,11 +46,9 @@ header {
 }
 
 .logo {
-    text-decoration: none;
-    color: #FFF6E9;
-    font-weight: 800;
-    letter-spacing: 1px;
-    font-size: 1.9rem;
+    height: 2.5rem;
+    cursor: pointer;
+    padding: 2px;
 }
 header > nav {
     display: flex;

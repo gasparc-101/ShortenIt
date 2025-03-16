@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-input:-webkit-autofill {
+.main #form-home .data-processing input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #2E236C inset !important;
     -webkit-text-fill-color: white;
 }
